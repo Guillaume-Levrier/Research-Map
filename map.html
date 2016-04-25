@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<title>EIB Institute - Research Map</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/map.css"/>
+<link rel="stylesheet" href="css/logo.css"/>
+
+<!--
+=========================================
+ ___ ___ ___         _  _____  ___  ___
+| __|_ _| _ )  ___  | |/ / _ \/ _ \|   \
+| _| | || _ \ |___| | ' <|  _/ (_) | |) |
+|___|___|___/       |_|\_\_|  \___/|___/
+
+=========================================
+This tool was created to allow researchers and the general public to access
+scientific articles published by universities, who have all received grants from
+the European Investment Bank Institute's Knowledge Programme.
+
+The Voronoi Arc Map is based on Mike Bostock's work, available here
+http://bl.ocks.org/mbostock/7608400. His work is both protected and released
+through the GNU General Public License, version 3.
+
+This code is commented so that both users and future admins can either
+suggest or implement modifications, updates and additional features.
+
+Original Author: Guillaume Levrier - February 2016
+-->
+</head>
+<body>
+  <!-- Load D3.js, Topojson for the map and queue for data management. -->
+<script src="js/d3.v3.min.js"></script>
+<script src="js/queue.v1.min.js"></script>
+<script src="js/topojson.v1.min.js"></script>
+
+<!-- Display the EIB logo, title -->
+<a href="http://institute.eib.org/"><img id="logo" src="img/eiblogo.png"></a>
+<p id="kpod-desc">Voronoi Map <br>University research projects</p>
+<a href="map.html#logo"  href="map.html#logo" target="_parent"><img id="top" src="img/backtomap.png"></a>
+<p id="kpod-howto"><br><br><br><br><br><br><br><br><br><br><span style="font-size:30px;cursor:pointer" onclick="openOverlay()">    <img id="helpicon" src="img/helpicon.png"></span></p>
+
+
+<!-- HELP overlay -->
+<div id="HelpOverlay" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay()">×</a>
+  <div class="overlay-content">
+
+      <div class="tabs">
+
+         <div class="tab">
+             <input type="radio" id="tab-1"  name="tab-group-1" checked>
+             <label style="border-top-left-radius:15px;border-bottom-left-radius:15px;" for="tab-1">HOW TO USE THE MAP</label>
+
+             <div class="tabcontent">
+                 <p style="font-size:40px;text-align:center">HOW TO USE THE MAP</p>
+                 <p>The map shows all the universities that have been working on research projects financed by the EIB Institute.
+             <br><br>Clicking on a University Logo[1] displays information about the EIB Institute funded research project(s) of that university and a list of research papers related to the research project(s).
+             <br><br>The blue dots[2] represent the precise geographical location of a university.
+             <br><br>Moving your mouse near to a logo (within a cell[3]), displays links between the selected university and other universities and/or the EIB. A line connecting the university with the EIB indicates that the university has been a project leader for a research project. Lines between universities indicate their partnership in a research consortium (if applicable).
+             <br><br>You can zoom in and out of the map by using Ctrl +/- or by pinching on your touch screen. You can also use Ctrl + F to search for projects or related research papers using keywords (author, project name, university or any theme).
+             <br><br>The size of the cell does not bear any information in itself, it is computed in order to give room to all universities on the map.
+             </p>
+                 <img width="250px" height="250px" id="help" src="img/help.png">
+             </div>
+         </div>
+
+         <div class="tab">
+             <input type="radio" id="tab-2" name="tab-group-1">
+             <label style="border-top-right-radius:15px;border-bottom-right-radius:15px;" for="tab-2">CHANGELOG</label>
+
+             <div class="tabcontent">
+               <p style="font-size:40px;text-align:center">CHANGELOG</p>
+                 <hr><p id="changelog">25/04/2016 - Map released</p>
+             </div>
+         </div>
+
+      </div>
+  </div>
+</div>
+
+<!-- Display all the university logos on top of the map and link them to the relevant paragraphs within the directory -->
+
+<a target="directory" href="directory.html#uti"><img id="logo-uti" src="img/map/uti.png"></a>
+<a target="directory" href="directory.html#upm"><img id="logo-upm" src="img/map/upm.png"></a>
+<a target="directory" href="directory.html#kul"><img id="logo-kul" src="img/map/kul.png"></a>
+<a target="directory" href="directory.html#uog"><img id="logo-uog" src="img/map/uog.png"></a>
+<a target="directory" href="directory.html#ssa"><img id="logo-ssa" src="img/map/ssa.png"></a>
+<a target="directory" href="directory.html#eib"><img id="logo-eib" src="img/map/eib.png"></a>
+
+
+
+<!-- Map div -->
+<div id="map-container"></div>
+
+<!-- Main script, manages the Voronoi map -->
+<script src="js/main.js"></script>
+
+<!-- The directory is an HTML file called within an iframe without border. The iframe is the same width as the map + description. -->
+<iframe src="directory.html" width="1080" height="800" style="border:none" name="directory"></iframe>
+
+<!-- Overlay script -->
+
+<script>
+function openOverlay() {
+    document.getElementById("HelpOverlay").style.width = "100%";
+}
+
+function closeOverlay() {
+    document.getElementById("HelpOverlay").style.width = "0%";
+}
+</script>
+
+</body>

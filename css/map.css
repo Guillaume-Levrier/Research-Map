@@ -1,0 +1,225 @@
+.subunit{
+  fill: #ccc;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+#top{
+  margin-top: 0px;
+  margin-left: 950px;
+  position: fixed;
+  width: 100px;
+}
+
+#map-container{
+  margin-left: 120px;
+  margin-top: 4px;
+  margin-right: auto;
+}
+
+#logo{
+  position: absolute;
+  width: 150px;
+  border: 0px;
+}
+
+
+#helpicon{
+  width: 50px;
+  margin-left: 30px;
+}
+
+#kpod-title{
+  margin-top: 70px;
+  margin-left: 3px;
+  font-family: Arial;
+  font-size: 36px;
+  font-weight: bolder;
+  position: absolute;
+}
+
+#kpod-desc{
+  margin-top: 150px;
+  margin-left: 3px;
+  font-family: Arial;
+  font-size: 20px;
+  position: absolute;
+}
+
+#kpod-howto{
+  margin-top: 178px;
+  margin-left: 3px;
+  font-family: Arial;
+  font-size: 10px;
+  position: absolute;
+}
+
+#kpod-scrolld{
+  margin-top: 300px;
+  margin-left: 3px;
+  font-family: Arial;
+  font-size: 10px;
+  position: absolute;
+}
+
+#kpod-scroll{
+  margin-top: 400px;
+  margin-left: 45px;
+  font-family: Arial;
+  font-size: 60px;
+  font-weight: bolder;
+  position: absolute;
+}
+
+.state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.university-arcs {
+  display: none;
+  fill: none;
+  stroke: #000;
+}
+
+.university-cell {
+  fill: none;
+  pointer-events: all;
+}
+
+.universities circle {
+  fill: none;
+  stroke: #0B539E;
+  stroke-width: 7px;
+  pointer-events: none;
+}
+
+.university:hover .university-arcs {
+  display: inline;
+}
+
+svg:not(:hover) .university-cell {
+  stroke: #000;
+  stroke-opacity: .06;
+  stroke-dasharray: 15,15;
+}
+
+.overlay {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    text-align: justify;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay p {
+    padding: 2px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px !important;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .closebtn {
+    font-size: 40px !important;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+#changelog {
+  font-family: 'Lucida Console';
+  font-size: 14px;
+}
+
+.tabs {
+  position: relative;
+  min-height: 200px;
+  clear: both;
+  margin: 65px 0 25px;
+}
+.tab {
+  float: left;
+}
+.tab label {
+  padding: 6px;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  position: relative;
+  left: 350px;
+  top: -29px;
+  color: white;
+  font-size: 12px;
+  font-family: Arial;
+}
+.tab [type=radio] {
+  display: none;
+}
+.tabcontent {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  opacity: 0;
+  color: white;
+}
+[type=radio]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+  color: black;
+}
+[type=radio]:checked ~ label ~ .tabcontent {
+  z-index: 1;
+  opacity: 1;
+}
