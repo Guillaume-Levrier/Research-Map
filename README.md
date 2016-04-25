@@ -1,4 +1,4 @@
-# Research-Map
+# Research Map
 
 •	The Research Map - [access the live map here](http://institute.eib.org/map/map.html) - is an online interactive tool designed to ease the access to research papers produced with the support of the EIB Institute. It is written in JavaScript using the D3.js library.
 
