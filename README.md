@@ -1,5 +1,8 @@
 # Research Map
 
+![Compatibility](https://img.shields.io/badge/compatibility-%20Firefox%20Chrome%20Safari%20IE%20-brightgreen.svg)
+![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000?style=plastic)
+
 •	The Research Map - [access the live map here](http://institute.eib.org/map/map.html) - is an online interactive tool designed to provide easy access to research papers produced with the support of the EIB Institute (EIBI). It is written in JavaScript using the D3.js library.
 
 •	Users can access scientific articles and reports by clicking on a university logo, which triggers the display of the relevant items in the list.
